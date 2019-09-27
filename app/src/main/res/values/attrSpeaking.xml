@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="SpeakingView">
+
+        <attr name="faceColor1" format="color" />
+        <attr name="eyesColor1" format="color" />
+        <attr name="mouthColor1" format="color" />
+        <attr name="borderColor1" format="color" />
+        <attr name="borderWidth1" format="dimension" />
+        <attr name="state1" format="enum">
+            <enum name="happy" value="0" />
+            <enum name="sad" value="1" />
+        </attr>
+
+    </declare-styleable>
+</resources>

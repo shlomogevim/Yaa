@@ -14,29 +14,12 @@ class MainActivity : AppCompatActivity() {
     var screenHeight = 0.0f
     var counter = 0
     lateinit var mainArrayDialog:MutableList<String>
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        val text=applicationContext.assets.open("myText1.txt").bufferedReader().use {
-            it.readText()
-        }
-        mainArrayDialog=text.split("!").toMutableList()
-        for (i in 0 until mainArrayDialog.size){
-            val st=mainArrayDialog[i]
-            if ((i%2)==0){
-                manSpeaking(st)
-            }else{
-                godSpeaking(st)
-            }
-        }
 
-
-
-
-
-
-
-
+        getData()
 
 
 
@@ -46,21 +29,20 @@ class MainActivity : AppCompatActivity() {
         screenHeight = displayMetrics.heightPixels.toFloat()
 
 
-        happySmilly.setOnClickListener({
-            emotionSmilly.happinessState = EmotionalFaceView.HAPPY
-        })
-        sadSmilly.setOnClickListener({
-            emotionSmilly.happinessState = EmotionalFaceView.SAD
-        })
 
 
-        emotionSmilly.setOnClickListener {
+
+        letsSpeak.setOnClickListener {
+
+
+            //  startIntroAnimation()
+            //    startAnimation()
 
             //1
-            /* startIntroAnimation()
-             startAnimation()*/
+           // generalAnimayoin1()
+
             //2
-            //animationFad()
+           // animationFad()
             //3
             // animationText()
             //4
@@ -68,28 +50,19 @@ class MainActivity : AppCompatActivity() {
             //5
             //  animateDp()
             //6
-            // animateColor()
+             animateColor()
             //7
            // generalAnimayoin1()
 
         }
     }
 
-    private fun godSpeaking(st: String) {
-        Log.d("clima"," god ==> $st")
 
-
-    }
-
-    private fun manSpeaking(st: String) {
-        Log.d("clima"," man ==> $st")
-
-    }
 
 
     private fun generalAnimayoin1() {
         ViewAnimator
-            .animate(emotionSmilly)
+            .animate(letsSpeak)
             .translationX(0f, 100f, -100f,0f)
             .duration(1000)
             .repeatCount(5)
@@ -99,7 +72,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun generalAnimayoin() {
         ViewAnimator
-            .animate(emotionSmilly)
+            .animate(letsSpeak)
             .shake()
           //  .interpolator(LinearInterpolator())
             .start()
@@ -187,14 +160,14 @@ class MainActivity : AppCompatActivity() {
 
     private fun startAnimation() {
         ViewAnimator
-            .animate(emotionSmilly)
+            .animate(letsSpeak)
             .alpha(0f, 1f)
             .onStart {
                 titleTextView.text = "יאללה לעבודה בנות !!!"
             }
             .decelerate()
             .duration(1000)
-            .thenAnimate(emotionSmilly)
+            .thenAnimate(letsSpeak)
             .scale(0.02f, 1.5f, 0.02f)
             .rotation(360f)
             .repeatCount(2)
@@ -202,8 +175,8 @@ class MainActivity : AppCompatActivity() {
             .duration(5000)
             .onStop {
                 titleTextView.text = "זהו זה נגמר"
-                emotionSmilly.scaleX = 1.0f
-                emotionSmilly.scaleY = 1.0f
+                letsSpeak.scaleX = 1.0f
+                letsSpeak.scaleY = 1.0f
 
                 /* prefs.sessions = prefs.sessions + 1
                  prefs.breaths = prefs.breaths + 1
@@ -220,6 +193,32 @@ class MainActivity : AppCompatActivity() {
             }
             .start()
     }
+
+    private fun getData() {
+        val text=applicationContext.assets.open("myText1.txt").bufferedReader().use {
+            it.readText()
+        }
+        mainArrayDialog=text.split("!").toMutableList()
+        for (i in 0 until mainArrayDialog.size){
+            val st=mainArrayDialog[i]
+            if ((i%2)==0){
+                manSpeaking(st)
+            }else{
+                godSpeaking(st)
+            }
+        }
+    }
+    private fun godSpeaking(st: String) {
+        Log.d("clima"," god ==> $st")
+
+
+    }
+
+    private fun manSpeaking(st: String) {
+        Log.d("clima"," man ==> $st")
+
+    }
+
 }
 
 
