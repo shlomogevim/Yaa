@@ -44,13 +44,13 @@ class MainActivity : AppCompatActivity() {
             //2
            // animationFad()
             //3
-            // animationText()
+           //  animationText()
             //4
             //  animationToSeveralView()
             //5
             //  animateDp()
             //6
-             animateColor()
+                  animateColor()
             //7
            // generalAnimayoin1()
 
@@ -82,9 +82,9 @@ class MainActivity : AppCompatActivity() {
 
     private fun animateColor() {
         ViewAnimator
-            .animate(titleTextView)
+            .animate(speakingTextview)
             .onStart {
-                titleTextView.text = "This is text animation"
+                speakingTextview.text = "מה קורה נסיך"
             }
             .textColor(Color.BLACK, Color.GREEN)
             .backgroundColor(Color.WHITE, Color.BLACK)
@@ -94,7 +94,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun animateDp() {
         counter++
-        ViewAnimator
+      /*  ViewAnimator
             .animate(happySmilly, sadSmilly)
             .dp().translationY(0f, 500f)
             .duration(3000)
@@ -104,31 +104,30 @@ class MainActivity : AppCompatActivity() {
             .rotation(720f * counter)
             .duration(3000)
             .decelerate()
-            /*.onStop {
+            *//*.onStop {
                 happySmilly.visibility= View.GONE
                 happySmilly.animate().rotation(-720f)
                 sadSmilly.animate().rotation(-720f)
                 happySmilly.visibility= View.VISIBLE
-            }*/
-            .start()
+            }*//*
+            .start()*/
     }
 
     private fun animationToSeveralView() {
-        ViewAnimator
+       /* ViewAnimator
             .animate(happySmilly, sadSmilly)
             .scale(0f, 30f, 0f)
             .duration(10000)
-            .start()
+            .start()*/
     }
 
     private fun animationText() {
         ViewAnimator
-
-            .animate(titleTextView)
+            .animate(speakingTextview)
             .scale(0f, 20f, 0f)
             .duration(10000)
             .onStart {
-                titleTextView.text = "This is text animation"
+                speakingTextview.text = "מה קורה מלך"
             }
             .start()
     }
