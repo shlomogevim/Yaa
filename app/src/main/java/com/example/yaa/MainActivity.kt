@@ -24,6 +24,8 @@ class MainActivity : AppCompatActivity() {
 
 
 
+
+
         val displayMetrics = DisplayMetrics()
         windowManager.defaultDisplay.getMetrics(displayMetrics)
         screenHeight = displayMetrics.heightPixels.toFloat()

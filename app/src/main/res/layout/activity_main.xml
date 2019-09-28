@@ -31,6 +31,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent">
+
         <com.example.yaa.SpeakingView
             android:id="@+id/letsSpeak"
             android:layout_width="100dp"
